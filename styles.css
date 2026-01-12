@@ -1,0 +1,48 @@
+:root{
+  --bg-top: #0b0f1a;
+  --bg-bottom: #111219;
+  --accent: #b7e9ff;
+  --ghost: #ecf9ff;
+  --mansion: #0a0c10;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
+body{
+  background: linear-gradient(180deg,var(--bg-top), #0c1622 40%, var(--bg-bottom));
+  overflow:hidden;
+  color:var(--accent);
+}
+
+/* HUD */
+#hud{
+  position:fixed;left:8px;top:8px;z-index:40;background:rgba(2,6,10,0.45);padding:8px 10px;border-radius:8px;
+  backdrop-filter: blur(4px);
+  display:flex;gap:12px;align-items:center;font-size:14px;
+}
+#controls{opacity:0.9}
+#audio-toggle{font-size:13px}
+
+/* Canvas */
+#game{
+  display:block;margin:0 auto;border:0;background:
+    radial-gradient(ellipse at 10% 20%, rgba(255,255,255,0.02), transparent 20%),
+    repeating-linear-gradient(transparent, transparent 40px, rgba(255,255,255,0.005) 41px, rgba(255,255,255,0.01) 42px);
+  width:100vw;height:100vh;touch-action:none;
+}
+
+/* Overlay (win/lose) */
+#overlay{
+  position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(0,0,0,0.6),rgba(0,0,0,0.85));z-index:60;
+}
+#overlay.hidden{display:none}
+#overlay-content{background:#0b0f13aa;padding:28px;border-radius:12px;text-align:center;color:var(--accent);max-width:90vw}
+#overlay-content h1{font-size:36px;margin:0 0 8px}
+#overlay-content p{margin:0 0 16px}
+#overlay button{padding:10px 16px;border-radius:8px;background:#e9f9ff;color:#071428;border:0;font-weight:700;cursor:pointer}
+
+/* small responsiveness */
+@media (max-width:600px){
+  #hud{font-size:12px}
+  #overlay-content h1{font-size:26px}
+}
