@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Haunted Mansion — Ghost Scare</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="hud">
+    <div id="score">Score: 0</div>
+    <div id="level">Level: 1</div>
+    <div id="controls">
+      Controls: ← → = move · ↑ = jump · Shift = sprint · Space = scare
+    </div>
+    <div id="audio-toggle">
+      <label><input type="checkbox" id="audioEnabled" checked /> Audio</label>
+    </div>
+  </div>
+
+  <canvas id="game"></canvas>
+
+  <div id="overlay" class="hidden">
+    <div id="overlay-content">
+      <h1 id="overlay-title"></h1>
+      <p id="overlay-sub"></p>
+      <button id="restart">Restart</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
